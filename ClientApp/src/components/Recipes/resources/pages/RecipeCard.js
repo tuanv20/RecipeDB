@@ -2,6 +2,7 @@
 import RecipeService from '../../../../services/RecipeService';
 import UpdateModal from './UpdateIngredientModal';
 import AddRecipeModal from './AddRecipeModal';
+import UpdateRecipeModal from './UpdateRecipeModal';
 
 //Component within every resource page that contains 
 //titles and descriptions of videos (passed in as props from the resource page)
@@ -31,8 +32,8 @@ export default function RecipeCard(props) {
                         {recipe.instructions}
                     </div>
                 </div>
-                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent d-flex flex-row">
-                    <AddRecipeModal recipe={recipe} changeCallback={() => changeUpdate(!update)} edit={true} />
+                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent d-flex flex-row justify-content-center">
+                    <UpdateRecipeModal recipe={recipe} changeCallback={() => changeUpdate(!update)} />
                     <div class="text-center"><a class="btn btn-outline-dark mt-auto m-2" onClick={deleteRecipe}>Delete</a></div>
                 </div>
             </div>

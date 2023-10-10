@@ -25,9 +25,7 @@ export default function UpdateIngredientModal(props) {
 
     return (
         <div>
-            <Button style={{ color: '"#00008B', textDecoration: 'none', fontWeight: 'bold', fontSize: '24px' }} onClick={toggle}>
-                Edit
-            </Button>
+            <div class="text-center"><a class="btn btn-outline-dark mt-auto m-2" onClick={toggle}>Edit</a></div>
             <Modal isOpen={modal} toggle={toggle}>
                 <ModalHeader toggle={toggle}>Edit Ingredient</ModalHeader>
                 <ModalBody>

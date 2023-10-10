@@ -3,15 +3,13 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import RecipeService from '../../../../services/RecipeService';
 import IngredientsPage from './IngredientsPage';
 
-//Basic info modal component that describes 
-//website and the tech stack used
-export default function AddRecipeModal(props) {
-    const [name, changeName] = useState("");
-    const [instructions, changeInstr] = useState("");
+export default function UpdateRecipeModal(props) {
+    let recipe = props.recipe;
+    const [name, changeName] = useState(recipe.name);
+    const [instructions, changeInstr] = useState(recipe.instructions);
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
     let ingredientDict = props.ingredientDict;
-
 
     let addRecipe = async function () {
         toggle();
@@ -38,11 +36,9 @@ export default function AddRecipeModal(props) {
 
     return (
         <div>
-            <Button style={{ color: 'success', textDecoration: 'none', fontWeight: 'bold', fontSize: '24px' }} onClick={toggle}>
-                Add Recipe
-            </Button>
+            <div class="text-center"><a class="btn btn-outline-dark mt-auto m-2" onClick={toggle}>Edit</a></div>
             <Modal size="lg" isOpen={modal} toggle={toggle}>
-                <ModalHeader toggle={toggle}>Add Recipe</ModalHeader>
+                <ModalHeader toggle={toggle}>Update Recipe</ModalHeader>
                 <ModalBody>
                     <form>
                         <div class="form-group">

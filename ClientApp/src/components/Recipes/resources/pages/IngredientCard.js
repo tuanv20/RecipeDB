@@ -70,7 +70,7 @@ export default function IngredientCard(props) {
                         </Button>
                     </div>
                     :
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent d-flex flex-row">
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent d-flex flex-row justify-content-center">
                         <UpdateIngredientModal ingredient={ingredient} updateCallback={() => changeUpdate(!update)} />
                         <div class="text-center"><a class="btn btn-outline-dark mt-auto m-2" onClick={() => deleteIngredient(ingredient.ingredientID)} >Delete</a></div>
                     </div>

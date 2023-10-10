@@ -1,0 +1,51 @@
+﻿.wrapper {
+    max-width: 41vw;
+    margin: auto;
+    padding: 2.1vw;
+    display: block;
+}
+
+.homeheader {
+    background-image: url("./resources/img/food.jpg");
+    background-size: contain;
+    /* background-color: #fec89a; */
+    text-align: center;
+    font-family: 'Montserrat Alternates';
+    color: #fff;
+    font-weight: bold;
+    min-height: 100vh;
+    display: flex;
+}
+
+h1 {
+    font-family: 'Montserrat Alternates';
+    font-size: 2vw;
+    padding-bottom: .67em;
+    font-weight: bold;
+}
+
+.bio {
+    color: #ffffff;
+    font-size: 1vw;
+    font-family: 'Montserrat Alternates';
+    font-weight: bold;
+}
+
+.buttonBox {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.myButton {
+    border-radius: 1vw;
+    border: 0.0357vw solid #ffffff;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 0.715vw;
+    padding: 0.571vw 1.107vw;
+    text-decoration: none;
+    margin: 1.69em auto;
+    caret-color: transparent;
+    font-weight: bold;
+}

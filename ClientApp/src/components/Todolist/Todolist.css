@@ -1,0 +1,70 @@
+.App-div{
+    background-color: #FDFAEC;
+    min-height: 120vh;
+    padding: 6%;
+    z-index: -1;
+  }
+  
+  .content-div {
+    height:100%;
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    margin:auto;
+    caret-color: transparent;
+  }
+  
+  .table_div{
+    display:flex;
+    justify-content: center;
+  }
+
+  .tasklistcontainer{
+    height: 320px;
+    width: 100%;
+    overflow-y: hidden;
+  }
+  
+  .pagesDiv{
+    justify-content: bottom;
+  }
+  
+  .newTaskDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    width: 100%;
+  }
+  
+  .form-control{
+    caret-color: black;
+  }
+  
+  .nav-div{
+    width: 100%; 
+    color: white;
+    display: flex; 
+    flex-direction: row;
+    justify-content: left;
+  }
+  
+  .searchbar{
+    display:flex;
+    flex-direction: row;
+    justify-content: right;
+    margin-left: 25%;
+  }
+  
+  .searchbar > * {
+    margin: 3%;
+  }
+
+  .info-div {
+    position: absolute;
+    top: 10%; 
+    left: 2%;
+  }
+  
+  

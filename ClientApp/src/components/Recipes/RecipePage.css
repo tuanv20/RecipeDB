@@ -1,0 +1,54 @@
+﻿.sidebar {
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 150vh;
+    background-color: #FCC8B2;
+    color: white;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    transition: width 0.3s;
+    font-family: 'Montserrat Alternates';
+}
+
+.sideheader {
+    font-family: 'Montserrat Alternates';
+    background-color: #FCC8B2;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+    caret-color: transparent;
+}
+
+.sidebarbutton {
+    width: 150px;
+    height: 50px;
+    position: fixed;
+    top: 10%;
+    font-size: 12px;
+    color: white;
+    font-weight: bold;
+    transition: left 0.3s;
+}
+
+ul.sidecontent > li {
+    list-style-type: none;
+    font-size: 24px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.resourcelink {
+    cursor: pointer;
+    caret-color: transparent;
+}
+
+    .resourcelink:hover {
+        color: #324A5F;
+        font-weight: bold;
+    }

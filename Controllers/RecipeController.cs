@@ -30,13 +30,6 @@ namespace NetReact.Controllers
             return recipe.RecipeID;
         }
 
-        [HttpPost]
-        public void addRecipeItem(RecipeItem recipeItem)
-        {
-            context.recipeItems.Add(recipeItem);
-            context.SaveChanges();
-        }
-
         [HttpGet]
         public IEnumerable<Ingredient> ingredients()
             {
@@ -48,6 +41,7 @@ namespace NetReact.Controllers
             context.ingredients.Add(ingredient);
             context.SaveChanges();
         }
+
         [HttpPost]
         public void delRecipe(int id)
         {
@@ -67,7 +61,7 @@ namespace NetReact.Controllers
             {
                 var recipesWithIngredient = (from ingr in context.ingredients
                                              where ingr.IngredientID == id
-                                             join item in context.recipeItems
+                                             join item in context.recipeitems
                                              on ingr.IngredientID equals item.IngredientID
                                              join recipe in context.recipes
                                              on item.ItemID equals recipe.RecipeID
@@ -97,6 +91,19 @@ namespace NetReact.Controllers
                 editIngredient.cost = ingredient.cost;
                 context.SaveChanges();
             }
+        }
+
+        [HttpGet]
+        public IEnumerable<RecipeItem> getRecipeItems(int recipeID)
+        {
+            return context.recipeitems.ToArray();
+        }
+
+        [HttpPost]
+        public void addRecipeItem(RecipeItem recipeItem)
+        {
+            context.recipeitems.Add(recipeItem);
+            context.SaveChanges();
         }
     }
 }

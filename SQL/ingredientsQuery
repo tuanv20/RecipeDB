@@ -1,0 +1,6 @@
+USE tuanrecipe;
+SELECT ingredients.Cost, ingredients.Name, RecipeItems.Quantity
+FROM Ingredients 
+INNER JOIN RecipeItems ON Ingredients.IngredientID = RecipeItems.IngredientID
+INNER JOIN Recipes ON RecipeItems.ItemID = Recipes.RecipeID
+WHERE Recipes.RecipeID = 1;

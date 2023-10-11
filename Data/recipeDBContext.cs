@@ -11,6 +11,6 @@ namespace NetReact.Data
 
         public DbSet<NetReact.Models.Recipe> recipes { get; set; }
         public DbSet<Ingredient> ingredients { get; set; }
-        public DbSet<RecipeItem> recipeItems { get; set; }
+        public DbSet<RecipeItem> recipeitems { get; set; }
     }
 }

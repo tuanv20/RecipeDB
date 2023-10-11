@@ -4,18 +4,22 @@ class RecipeService {
     getRecipes() {
         return axios.get(NET_API_URL + "recipe/recipes");
     }
+
     addRecipe(recipe) {
         return axios.post(NET_API_URL + "recipe/addRecipe", {
             Name: recipe.Name,
             Instructions: recipe.Instructions
         });
     }
+
     deleteRecipe(id) {
         return axios.post(NET_API_URL + "recipe/delRecipe/" + id);
     }
+
     getIngredients() {
         return axios.get(NET_API_URL + "recipe/ingredients");
     }
+
     addIngredient(ingredient) { 
         return axios.post(NET_API_URL + "recipe/addIngredient", {
             IngredientID: ingredient.IngredientID,
@@ -23,9 +27,11 @@ class RecipeService {
             Cost: ingredient.Cost
         });
     }
+
     deleteIngredient(id) {
         return axios.post(NET_API_URL + "recipe/delIngredient/" + id);
     }
+
     updateIngredient(ingredient) {
         return axios.post(NET_API_URL + "recipe/updateIngredient", {
             IngredientID: ingredient.IngredientID,
@@ -33,6 +39,11 @@ class RecipeService {
             Cost: ingredient.Cost
         });
     }
+
+    getRecipeItems(recipeID) {
+        return axios.get(NET_API_URL + "recipe/getRecipeItems/" + recipeID);
+    }
+
     addRecipeItem(recipeItem) {
         return axios.post(NET_API_URL + "recipe/addRecipeItem", {
             ItemID: recipeItem.ItemID,

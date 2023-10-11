@@ -59,7 +59,7 @@ export default function IngredientsPage(props) {
                                 })}
                             </div>
                         </>
-                    }``
+                    }
                 </div>
             </section>
         </body>

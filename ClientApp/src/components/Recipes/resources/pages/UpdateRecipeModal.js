@@ -1,37 +1,27 @@
-﻿import React, { useState } from 'react';
+﻿import React, { useEffect, useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import RecipeService from '../../../../services/RecipeService';
 import IngredientsPage from './IngredientsPage';
 
 export default function UpdateRecipeModal(props) {
     let recipe = props.recipe;
+    const [recipeItems, changeRecipeItems] = useState([]);
     const [name, changeName] = useState(recipe.name);
     const [instructions, changeInstr] = useState(recipe.instructions);
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
     let ingredientDict = props.ingredientDict;
 
-    let addRecipe = async function () {
-        toggle();
-        let newRecipeId;
-        let newRecipe = {
-            Name: name,
-            Instructions: instructions
-        }
-        RecipeService.addRecipe(newRecipe).then((response) => {
-            newRecipeId = response.data;
-            for (let key in ingredientDict) {
-                let newRecipeItem = {
-                    ItemID: newRecipeId,
-                    IngredientID: key,
-                    Quantity: ingredientDict[key]
-                }
-                RecipeService.addRecipeItem(newRecipeItem).then((response) => {
-                    return response;
-                }).catch((response) => console.log(response));
-            }
-            props.submitCallback();
+    useEffect(() => {
+        RecipeService.getRecipeItems(recipe.recipeID).then((response) => {
+            changeRecipeItems(response.data);
+            return response;
         }).catch((response) => console.log(response));
+    }, []);
+
+
+    let updateRecipe = function () {
+        console.log(recipeItems);
     }
 
     return (
@@ -52,7 +42,7 @@ export default function UpdateRecipeModal(props) {
                         <br></br>
                         <IngredientsPage ingredientDict={ingredientDict} selector={true} />
                         <br></br>
-                        <Button class="btn btn-primary" onClick={() => addRecipe()}>Submit</Button>
+                        <Button class="btn btn-primary" onClick={() => updateRecipe()}>Submit</Button>
                     </form>
                 </ModalBody>
                 <ModalFooter>
